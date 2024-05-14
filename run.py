@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import os 
+import sqlite3
 
 class FireFoxBinariesDownloader:
 
@@ -9,6 +10,8 @@ class FireFoxBinariesDownloader:
         options = webdriver.FirefoxOptions()
         options.add_argument('')
         self.driver = webdriver.Firefox()
+
+        db = sqlite3.connect('sql.db')
 
     def downloadNodeJS():
         driver = webdriver.Firefox()
@@ -46,4 +49,4 @@ class FireFoxBinariesDownloader:
                 
 if __name__ == "__main__":
     #Main method to create objects
-    pass
+    
